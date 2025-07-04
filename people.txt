@@ -1,0 +1,501 @@
+Krishna
+Abraham Lincoln
+Mahatma Gandhi
+Nelson Mandela
+Martin Luther King Jr.
+Winston Churchill
+Queen Elizabeth II
+Julius Caesar
+Alexander the Great
+Cleopatra
+Genghis Khan
+Napoleon Bonaparte
+George Washington
+Franklin D. Roosevelt
+Mao Zedong
+Joseph Stalin
+Vladimir Lenin
+Adolf Hitler
+Benito Mussolini
+Fidel Castro
+Che Guevara
+Indira Gandhi
+Margaret Thatcher
+Ronald Reagan
+John F. Kennedy
+Barack Obama
+Donald Trump
+Vladimir Putin
+Xi Jinping
+Angela Merkel
+Dalai Lama (14th)
+Pope Francis
+Pope John Paul II
+Queen Victoria
+Akbar the Great
+Ashoka the Great
+Qin Shi Huang
+Augustus Caesar
+Charlemagne
+Simón Bolívar
+Ho Chi Minh
+Willy Brandt
+Mikhail Gorbachev
+Lech Wałęsa
+Anwar Sadat
+Yasser Arafat
+David Ben-Gurion
+Golda Meir
+Eleanor Roosevelt
+Benazir Bhutto
+Eva Perón
+Jacinda Ardern
+Justin Trudeau
+Emmanuel Macron
+Narendra Modi
+Shinzo Abe
+Lee Kuan Yew
+Kim Jong-un
+Ayatollah Khomeini
+Saddam Hussein
+Muammar Gaddafi
+Hosni Mubarak
+Bashar al-Assad
+Recep Tayyip Erdoğan
+Benjamin Netanyahu
+Hillary Clinton
+Bill Clinton
+George W. Bush
+Joe Biden
+Kamala Harris
+Alexandria Ocasio-Cortez
+Bernie Sanders
+Nancy Pelosi
+Theresa May
+Boris Johnson
+Volodymyr Zelenskyy
+Albert Einstein
+Isaac Newton
+Marie Curie
+Charles Darwin
+Galileo Galilei
+Nikola Tesla
+Leonardo da Vinci
+Stephen Hawking
+Aristotle
+Plato
+Socrates
+Pythagoras
+Archimedes
+Euclid
+Hypatia
+Copernicus
+Johannes Kepler
+Louis Pasteur
+Alexander Fleming
+Gregor Mendel
+Rosalind Franklin
+James Watson
+Francis Crick
+Alan Turing
+Tim Berners-Lee
+Carl Sagan
+Neil deGrasse Tyson
+Jane Goodall
+Dian Fossey
+Rachel Carson
+Sigmund Freud
+Carl Jung
+Noam Chomsky
+Karl Marx
+Adam Smith
+John Maynard Keynes
+Milton Friedman
+Confucius
+Laozi
+Sun Tzu
+Machiavelli
+Voltaire
+Jean-Jacques Rousseau
+René Descartes
+Immanuel Kant
+Friedrich Nietzsche
+Simone de Beauvoir
+Ayn Rand
+Sartre, Jean-Paul
+Albert Camus
+Michelangelo
+Leonardo da Vinci
+Pablo Picasso
+Vincent van Gogh
+Rembrandt
+Claude Monet
+Salvador Dalí
+Andy Warhol
+Frida Kahlo
+Georgia O'Keeffe
+Jackson Pollock
+Henri Matisse
+Edvard Munch
+Gustav Klimt
+Johannes Vermeer
+Caravaggio
+Raphael
+Donatello
+Auguste Rodin
+Frank Lloyd Wright
+Zaha Hadid
+Antoni Gaudí
+Le Corbusier
+I. M. Pei
+Banksy
+Yayoi Kusama
+Ai Weiwei
+Jean-Michel Basquiat
+Keith Haring
+Roy Lichtenstein
+Piet Mondrian
+Wassily Kandinsky
+Paul Cézanne
+Edgar Degas
+Pierre-Auguste Renoir
+Édouard Manet
+Francisco Goya
+Diego Velázquez
+Peter Paul Rubens
+Titian
+Albrecht Dürer
+Hieronymus Bosch
+El Greco
+M.C. Escher
+Norman Rockwell
+Ansel Adams
+Annie Leibovitz
+Robert Mapplethorpe
+Cindy Sherman
+Jeff Koons
+William Shakespeare
+Homer
+Dante Alighieri
+Geoffrey Chaucer
+Leo Tolstoy
+Fyodor Dostoevsky
+Jane Austen
+Charles Dickens
+Mark Twain
+George Orwell
+J.R.R. Tolkien
+J.K. Rowling
+Stephen King
+Agatha Christie
+Edgar Allan Poe
+H.P. Lovecraft
+Ernest Hemingway
+F. Scott Fitzgerald
+Virginia Woolf
+James Joyce
+Gabriel García Márquez
+Jorge Luis Borges
+Franz Kafka
+Marcel Proust
+Victor Hugo
+Alexandre Dumas
+Jules Verne
+H.G. Wells
+Aldous Huxley
+Arthur Conan Doyle
+Mary Shelley
+Bram Stoker
+Oscar Wilde
+George Bernard Shaw
+T.S. Eliot
+Walt Whitman
+Emily Dickinson
+Robert Frost
+Maya Angelou
+Langston Hughes
+Sylvia Plath
+William Wordsworth
+Lord Byron
+John Keats
+Percy Bysshe Shelley
+William Blake
+John Milton
+Goethe, Johann Wolfgang von
+Hans Christian Andersen
+The Brothers Grimm
+Wolfgang Amadeus Mozart
+Ludwig van Beethoven
+Johann Sebastian Bach
+Frédéric Chopin
+Pyotr Ilyich Tchaikovsky
+Michael Jackson
+The Beatles
+Elvis Presley
+Bob Dylan
+Queen (Freddie Mercury)
+Madonna
+Beyoncé
+Taylor Swift
+David Bowie
+Prince
+Stevie Wonder
+Aretha Franklin
+Frank Sinatra
+Bob Marley
+Johnny Cash
+Led Zeppelin
+The Rolling Stones
+Pink Floyd
+Nirvana (Kurt Cobain)
+Jimi Hendrix
+Eric Clapton
+Elton John
+Whitney Houston
+Mariah Carey
+Celine Dion
+Adele
+Lady Gaga
+Rihanna
+Kanye West (Ye)
+Jay-Z
+Eminem
+Tupac Shakur
+The Notorious B.I.G.
+Drake
+Kendrick Lamar
+BTS
+BLACKPINK
+ABBA
+U2
+Coldplay
+Daft Punk
+Kraftwerk
+James Brown
+Ray Charles
+Miles Davis
+Charlie Chaplin
+Marilyn Monroe
+Audrey Hepburn
+Marlon Brando
+Robert De Niro
+Al Pacino
+Jack Nicholson
+Tom Hanks
+Leonardo DiCaprio
+Meryl Streep
+Katharine Hepburn
+Bette Davis
+Humphrey Bogart
+Cary Grant
+James Dean
+Elizabeth Taylor
+Grace Kelly
+Ingrid Bergman
+Laurence Olivier
+Orson Welles
+Akira Kurosawa
+Alfred Hitchcock
+Stanley Kubrick
+Steven Spielberg
+Martin Scorsese
+Quentin Tarantino
+James Cameron
+Christopher Nolan
+George Lucas
+Walt Disney
+Jim Henson
+Lucille Ball
+Oprah Winfrey
+Ellen DeGeneres
+Johnny Carson
+David Letterman
+Jon Stewart
+Stephen Colbert
+Dave Chappelle
+Richard Pryor
+George Carlin
+Eddie Murphy
+Robin Williams
+Jim Carrey
+Will Smith
+Dwayne "The Rock" Johnson
+Arnold Schwarzenegger
+Sylvester Stallone
+Clint Eastwood
+John Wayne
+Morgan Freeman
+Samuel L. Jackson
+Denzel Washington
+Sidney Poitier
+Harrison Ford
+Sean Connery
+Anthony Hopkins
+Daniel Day-Lewis
+Brad Pitt
+George Clooney
+Julia Roberts
+Sandra Bullock
+Angelina Jolie
+Jennifer Lawrence
+Scarlett Johansson
+Emma Watson
+Keanu Reeves
+Bruce Lee
+Jackie Chan
+Amitabh Bachchan
+Shah Rukh Khan
+Priyanka Chopra
+Aishwarya Rai Bachchan
+Sophia Loren
+Brigitte Bardot
+Michael Jordan
+LeBron James
+Kobe Bryant
+Muhammad Ali
+Pelé
+Diego Maradona
+Lionel Messi
+Cristiano Ronaldo
+Tiger Woods
+Serena Williams
+Roger Federer
+Rafael Nadal
+Novak Djokovic
+Usain Bolt
+Michael Phelps
+Babe Ruth
+Jackie Robinson
+Tom Brady
+Wayne Gretzky
+Simone Biles
+Nadia Comăneci
+Jesse Owens
+Carl Lewis
+Michael Schumacher
+Lewis Hamilton
+Ayrton Senna
+Lance Armstrong
+Eddy Merckx
+Mike Tyson
+Floyd Mayweather Jr.
+Manny Pacquiao
+Conor McGregor
+Ronda Rousey
+David Beckham
+Zinedine Zidane
+Johan Cruyff
+Franz Beckenbauer
+George Best
+Magic Johnson
+Larry Bird
+Wilt Chamberlain
+Kareem Abdul-Jabbar
+Bill Russell
+Shaquille O'Neal
+Stephen Curry
+Michael Johnson
+Martina Navratilova
+Billie Jean King
+Don Bradman
+Sachin Tendulkar
+Bill Gates
+Steve Jobs
+Elon Musk
+Jeff Bezos
+Mark Zuckerberg
+Larry Page
+Sergey Brin
+Warren Buffett
+Henry Ford
+Thomas Edison
+Alexander Graham Bell
+Johannes Gutenberg
+The Wright Brothers
+Coco Chanel
+Giorgio Armani
+Ralph Lauren
+Calvin Klein
+Yves Saint Laurent
+Christian Dior
+Estée Lauder
+Madam C.J. Walker
+J.P. Morgan
+Andrew Carnegie
+John D. Rockefeller
+Cornelius Vanderbilt
+Jesus Christ
+Muhammad
+Buddha (Siddhartha Gautama)
+Moses
+Abraham
+Martin Luther
+John Calvin
+Joseph Smith
+Mother Teresa
+Billy Graham
+Superman
+Batman
+Spider-Man
+Wonder Woman
+The Joker
+Darth Vader
+Luke Skywalker
+Yoda
+Harry Potter
+Hermione Granger
+Voldemort
+Gandalf
+Frodo Baggins
+Sherlock Holmes
+James Bond
+Indiana Jones
+Rocky Balboa
+The Terminator
+Ellen Ripley
+Sarah Connor
+Katniss Everdeen
+Don Corleone
+Tony Montana
+Hannibal Lecter
+Forrest Gump
+Tyler Durden
+Walter White
+Tony Soprano
+Don Draper
+Homer Simpson
+Mickey Mouse
+Bugs Bunny
+Pikachu
+Mario
+Lara Croft
+Barbie
+Godzilla
+King Kong
+Frankenstein's monster
+Dracula
+Winnie-the-Pooh
+Alice
+Peter Pan
+The Grinch
+Ebenezer Scrooge
+Atticus Finch
+Holden Caulfield
+Jay Gatsby
+Captain Ahab
+Romeo and Juliet
+Hamlet
+Macbeth
+Oedipus
+Hercules
+Zeus
+Thor
+Loki
+Santa Claus
+The Tooth Fairy
+The Easter Bunny
+Jack Frost
+Mother Nature
+Father Time
+Uncle Sam
+John Doe/Jane Doe
