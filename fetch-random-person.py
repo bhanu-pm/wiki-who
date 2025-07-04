@@ -1,5 +1,6 @@
 import wikipediaapi
 import random
+import boto3
 
 
 def generate_quiz_data(question_count=20):
@@ -54,7 +55,7 @@ def generate_quiz_data(question_count=20):
         # Randomly select 3 wrong answers
         options = random.sample(wrong_answer_pool, 3)
         options.append(correct_answer)
-        random.shuffle(options) # Shuffle the options for the user
+        random.shuffle(options)
 
         quiz_data.append({
             "question_number": len(quiz_data) + 1,
@@ -66,6 +67,11 @@ def generate_quiz_data(question_count=20):
     return quiz_data
 
 if __name__ == "__main__":
+    # Initialize the AWS client
+    s3 = boto3.client('s3')
+    bucket_name = 'pcg-comment-storage'
+    quiz_file_name = 'people.txt'
+
     # Generate the quiz
     quiz = generate_quiz_data(
         question_count=10
@@ -73,7 +79,6 @@ if __name__ == "__main__":
 
     if quiz:
         print("\n--- QUIZ GENERATED SUCCESSFULLY ---")
-        # Print the first two questions as an example
         for question in quiz:
             print(f"\n--- Question {question['question_number']} ---")
             print("Which person's page has these sections?")
