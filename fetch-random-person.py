@@ -24,7 +24,7 @@ def generate_quiz_data(question_count=20):
 
     # Initialize the Wikipedia API
     wiki_api = wikipediaapi.Wikipedia(
-        user_agent='MyQuizApp/1.0 (popxicman@example.com)',
+        user_agent='MyQuizApp/1.0 (@example.com)',
         language='en'
     )
 
@@ -72,10 +72,34 @@ def generate_quiz_data(question_count=20):
     return quiz_data
 
 def lambda_handler(event, context):
-    # Generate the quiz
-    question_count = event['question_count']
-    quiz = generate_quiz_data(question_count=10)
+    # Extract HTTP method and path from the event
+    http_method = event.get('httpMethod')
+    path = event.get('path')
+
+    # Generate the quiz according to API route logic
+    try:
+        # --- The Router Logic ---
+        if http_method == 'GET' and path == '/q-10':
+            status_code = 200
+            response_body = generate_quiz_data(question_count=10)
+
+        elif http_method == 'GET' and path == '/q-20':
+            status_code = 200
+            response_body = generate_quiz_data(question_count=20)
+        
+        elif http_method == 'GET' and path == '/q-30':
+            status_code = 200
+            response_body = generate_quiz_data(question_count=30)
+
+        else:
+            status_code = 404
+            response_body = {"error": "Not Found: No route for this request."}
+
+    except Exception as e:
+        status_code = 500
+        response_body = {"error": "An internal server error occurred."}
+
     return {
-        "statusCode": 200,
-        "body": quiz
+        "statusCode": status_code,
+        "body": json.dumps(response_body)
     }
