@@ -1,7 +1,13 @@
+import json
 import wikipediaapi
 import random
 import boto3
 
+
+# Initialize the AWS client
+s3 = boto3.client('s3')
+bucket_name = ''
+quiz_file_name = ''
 
 def generate_quiz_data(question_count=20):
     """
@@ -22,24 +28,23 @@ def generate_quiz_data(question_count=20):
         language='en'
     )
 
-    # Fetching 50 people at random from the list of people in the people.json file
-    with open('people.txt', 'r') as file:
-        people = file.readlines()
-    name_pool = [person.strip() for person in people]
+    # Fetching 50 people at random from the people txt file in s3 bucket
+    people = s3.get_object(Bucket=bucket_name, Key=quiz_file_name)['Body'].read().decode('utf-8').split('\n')
+    name_pool = [person.strip() for person in people if person.strip()]
     name_pool = random.sample(name_pool, int(question_count*2.5))
 
     wrong_answer_pool = name_pool.copy()
-    print(f"Successfully fetched {len(name_pool)} names for the answer pool.")
+    # print(f"Successfully fetched {len(name_pool)} names for the answer pool.")
 
     quiz_data = []
-    print("Fetching section data for each quiz subject...")
+    # print("Fetching section data for each quiz subject...")
 
     for i, subject_title in enumerate(name_pool):
-        print(f"  ({i+1}/{question_count}) Getting data for: {subject_title}")
+        # print(f"  ({i+1}/{question_count}) Getting data for: {subject_title}")
         page = wiki_api.page(subject_title)
 
         if not page.exists() or not page.sections:
-            print(f"    -> Skipping '{subject_title}' (no sections or page error).")
+            # print(f"    -> Skipping '{subject_title}' (no sections or page error).")
             continue
         else:
             if i == question_count:
@@ -66,25 +71,11 @@ def generate_quiz_data(question_count=20):
 
     return quiz_data
 
-if __name__ == "__main__":
-    # Initialize the AWS client
-    s3 = boto3.client('s3')
-    bucket_name = 'pcg-comment-storage'
-    quiz_file_name = 'people.txt'
-
+def lambda_handler(event, context):
     # Generate the quiz
-    quiz = generate_quiz_data(
-        question_count=10
-    )
-
-    if quiz:
-        print("\n--- QUIZ GENERATED SUCCESSFULLY ---")
-        for question in quiz:
-            print(f"\n--- Question {question['question_number']} ---")
-            print("Which person's page has these sections?")
-            for sec in question['sections']:
-                print(f"  - {sec}")
-            print("\nOptions:")
-            for i, opt in enumerate(question['options']):
-                print(f"  {chr(65+i)}. {opt}")
-            print(f"\nCorrect Answer: {question['correct_answer']}")
+    question_count = event['question_count']
+    quiz = generate_quiz_data(question_count=10)
+    return {
+        "statusCode": 200,
+        "body": quiz
+    }
