@@ -8,38 +8,22 @@ table_10 = dynamodb.Table('leaderboard_10')
 table_20 = dynamodb.Table('leaderboard_20')
 table_30 = dynamodb.Table('leaderboard_30')
 
-# Router function which invokes functions based on GET or POST API requests received in event.
+# Router function based on GET or POST API requests received in event.
 def lambda_handler(event, context):
     # Extract HTTP method and path from the event
     http_method = event.get('httpMethod')
     path = event.get('path')
+    question_count = int(path.split('-')[-1])
 
     # Generate the quiz according to API route logic
     try:
-        # --- The Router Logic ---
-        if http_method == 'GET' and path == '/leaderboard-q-10':
+        if http_method == 'GET' and question_count in [10, 20, 30]:
             status_code = 200
-            response_body = get_leaderboard_data(question_count=10)
+            resource_body = get_leaderboard_data(question_count=question_count)
 
-        elif http_method == 'GET' and path == '/leaderboard-q-20':
+        elif http_method == 'PUT' and question_count in [10, 20, 30]:
             status_code = 200
-            response_body = get_leaderboard_data(question_count=20)
-        
-        elif http_method == 'GET' and path == '/leaderboard-q-30':
-            status_code = 200
-            response_body = get_leaderboard_data(question_count=30)
-
-        elif http_method == 'PUT' and path == '/leaderboard-q-10':
-            status_code = 200
-            response_body = put_leaderboard_data(request_body=event['body'])
-
-        elif http_method == 'PUT' and path == '/leaderboard-q-20':
-            status_code = 200
-            response_body = put_leaderboard_data(request_body=event['body'])
-
-        elif http_method == 'PUT' and path == '/leaderboard-q-30':
-            status_code = 200
-            response_body = put_leaderboard_data(request_body=event['body'])
+            response_body = put_leaderboard_data(request_body=event['body'], table_name=f"table_{question_count}")
 
         else:
             status_code = 404
