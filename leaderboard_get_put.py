@@ -8,6 +8,18 @@ table_10 = dynamodb.Table('leaderboard_10')
 table_20 = dynamodb.Table('leaderboard_20')
 table_30 = dynamodb.Table('leaderboard_30')
 
+# Function to get leaderboard data from dynamodb table
+def get_leaderboard_data(table_name):
+    response = table_name.scan()
+    items = response['Items']
+    return items
+
+# Function to put leaderboard data to dynamodb table
+def put_leaderboard_data(request_body, table_name):
+    response_body = json.loads(request_body)
+    table_name.put_item(Item=response_body)
+    return response_body
+
 # Router function based on GET or POST API requests received in event.
 def lambda_handler(event, context):
     # Extract HTTP method and path from the event
@@ -19,7 +31,7 @@ def lambda_handler(event, context):
     try:
         if http_method == 'GET' and question_count in [10, 20, 30]:
             status_code = 200
-            resource_body = get_leaderboard_data(question_count=question_count)
+            resource_body = get_leaderboard_data(table_name=f"table_{question_count}")
 
         elif http_method == 'PUT' and question_count in [10, 20, 30]:
             status_code = 200
