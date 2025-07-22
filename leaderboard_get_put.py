@@ -2,11 +2,16 @@ import boto3
 import json
 import os
 import time
+import decimal # Import the decimal library
+from dotenv import load_dotenv
 
 
 # Env variables
+load_dotenv()
 TABLE_NAME = os.environ.get('DYNAMODB_TABLE')
 GSI_NAME = os.environ.get('DYNAMODB_GSI')
+if not TABLE_NAME or not GSI_NAME:
+    raise ValueError("DYNAMODB_TABLE and DYNAMODB_GSI environment variables must be set.")
 MAX_SCORES = {
     "MODE_10": 10,
     "MODE_20": 20,
@@ -19,17 +24,32 @@ TIME_PADDING = 8
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table(TABLE_NAME)
 
+# Custom JSON Encoder
+# helper class for handling decimal objects
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, decimal.Decimal):
+            # if the number is a whole number
+            if obj % 1 == 0:
+                return int(obj)
+            # if it has decimal places, convert to float
+            else:
+                return float(obj)
+        # Let the base class default method raise the TypeError for other types
+        return super(DecimalEncoder, self).default(obj)
+
 def build_response(status_code, body):
     return {
-        'statusCode': status_code,
+        "statusCode": status_code,
         "headers": {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-            'Access-Control-Allow-Methods': 'GET', 'POST',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Credentials': True
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+            "Access-Control-Allow-Methods": "GET,POST,OPTIONS", # List of strings
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": True
             },
-        'body': json.dumps(body)
+        # Use the custom encoder class here
+        "body": json.dumps(body, cls=DecimalEncoder)
     }
 
 # Router function for API calls
@@ -45,7 +65,11 @@ def lambda_handler(event, context):
 
         # Getting leaderboard (parameters in the query string)
         elif http_method == 'GET' and path == '/leaderboard':
-            params = event.get('queryStringParameters', {})
+            param_str = event.get('queryStringParameters', {})
+            if isinstance(param_str, str):
+                params = json.loads(param_str)
+            else: # Already a dictionary
+                params = param_str
             return get_leaderboard(table, params)
         
         elif http_method == 'OPTIONS':
@@ -97,8 +121,9 @@ def add_score(table, data):
     }
 
     table.put_item(Item=item_to_add)
-    
-    return build_response(201, {'message': 'Score added successfully!', 'item': item_to_add})
+    rank = get_user_rank(game_mode, score_and_time_key)
+
+    return build_response(201, {'message': 'Score added successfully!', 'rank': rank, 'name': nickname})
 
 # gets top 9 scores from given mode
 def get_leaderboard(table, params):
@@ -114,5 +139,27 @@ def get_leaderboard(table, params):
     )
     
     leaderboard_items = response.get('Items', [])
-    
     return build_response(200, leaderboard_items)
+
+# Calc user rank
+def get_user_rank(game_mode, score_and_time_key):
+    try:
+        # DynamoDB COUNTs items with better (lower) scoreAndTime key
+        response = table.query(
+            IndexName=GSI_NAME,
+            Select='COUNT',
+            KeyConditionExpression=(
+                boto3.dynamodb.conditions.Key('gameMode').eq(game_mode) & 
+                boto3.dynamodb.conditions.Key('scoreAndTime').lt(score_and_time_key)
+            )
+        )
+        
+        count_better = response.get('Count', 0)
+        rank = count_better + 1
+
+    except Exception as e:
+        # If ranking fails just returns null
+        print(f"Could not calculate rank for {session_id}. Error: {e}")
+        rank = None
+
+    return rank
